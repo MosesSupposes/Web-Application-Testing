@@ -31,6 +31,14 @@ export default function App() {
       setDisplay({...display, balls: display.balls + 1})
     }
   }
+
+  const foul = () => {
+    if (display.strikes === 2) {
+      setDisplay({...display, strikes: 2})
+    } else {
+      strike()
+    }
+  }
   
   return (
     <div className="App">
@@ -38,6 +46,7 @@ export default function App() {
       <Dashboard 
         strike={strike} 
         ball={ball}
+        foul={foul}
         hit={reset} 
       />
     </div>
