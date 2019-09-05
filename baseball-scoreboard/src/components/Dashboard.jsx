@@ -7,6 +7,7 @@ export default function Dashboard(props) {
             <button>Ball</button>
             <button>Foul</button>
             <button>Hit</button>
+            <button>Reset</button>
         </div>
     )
 }
