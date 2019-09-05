@@ -17,10 +17,21 @@ export default function App() {
     }
   }
   
+  const reset = () => {
+    console.log(display)
+    setDisplay({
+      strikes: 0,
+      balls: 0
+    })
+  }
+  
   return (
     <div className="App">
       <Display strikes={display.strikes} balls={display.balls} />
-      <Dashboard strike={strike} />
+      <Dashboard 
+        strike={strike} 
+        reset={reset} 
+      />
     </div>
   )
 }
