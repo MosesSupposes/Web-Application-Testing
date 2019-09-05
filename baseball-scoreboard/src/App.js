@@ -38,7 +38,7 @@ export default function App() {
       <Dashboard 
         strike={strike} 
         ball={ball}
-        reset={reset} 
+        hit={reset} 
       />
     </div>
   )
