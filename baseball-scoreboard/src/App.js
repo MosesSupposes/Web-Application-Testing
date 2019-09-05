@@ -9,20 +9,27 @@ export default function App() {
     balls: 0
   })
 
-  const strike = () => {
-    if (display.strikes >= 3) {
-      setDisplay({...display, strikes: 0})
-    } else {
-      setDisplay({...display, strikes: display.strikes + 1})
-    }
-  }
-  
   const reset = () => {
-    console.log(display)
     setDisplay({
       strikes: 0,
       balls: 0
     })
+  }
+
+  const strike = () => {
+    if (display.strikes >= 3) {
+      reset()
+    } else {
+      setDisplay({...display, strikes: display.strikes + 1})
+    }
+  }
+
+  const ball = () => {
+    if (display.balls >= 4) {
+      reset()
+    } else {
+      setDisplay({...display, balls: display.balls + 1})
+    }
   }
   
   return (
@@ -30,6 +37,7 @@ export default function App() {
       <Display strikes={display.strikes} balls={display.balls} />
       <Dashboard 
         strike={strike} 
+        ball={ball}
         reset={reset} 
       />
     </div>
